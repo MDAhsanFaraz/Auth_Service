@@ -23,7 +23,7 @@ module.exports = {
         validate: {
           len: [3, 300]
         }
-      },eatedAt: {
+      },createdAt: {
         allowNull: false,
         type: Sequelize.DATE
       },
