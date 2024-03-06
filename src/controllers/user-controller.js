@@ -86,10 +86,33 @@ const isAdmin = async (req, res) => {
     });
   }
 };
+const addRole = async (req, res) => {
+  try {
+    const response = await userService.addRole(
+      req.body.userid,
+      req.body.roleid
+    );
+    return res.status(200).json({
+      data: response,
+      err: {},
+      success: true,
+      message: "Successfully added desired to Role to the given User",
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      message: "Something went wrong",
+      data: {},
+      success: false,
+      err: error,
+    });
+  }
+};
 
 module.exports = {
   create,
   signIn,
   isAuthenticated,
   isAdmin,
+  addRole,
 };

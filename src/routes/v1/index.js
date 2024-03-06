@@ -21,5 +21,6 @@ router.get(
   AuthRequestValidators.validateIsAdminRequest,
   UserController.isAdmin
 );
+router.post("/addRole", UserController.addRole);
 
 module.exports = router;

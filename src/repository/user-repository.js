@@ -66,5 +66,17 @@ class UserRepository {
       throw error;
     }
   }
+  async addRole(userId, roleId) {
+    try {
+      const u = await User.findByPk(userId);
+      const r = await Role.findByPk(roleId);
+      console.log(u, r);
+      const response = await u.addRole(r);
+      return response;
+    } catch (error) {
+      console.log("Something went wrong in the repository layer");
+      throw error;
+    }
+  }
 }
 module.exports = UserRepository;

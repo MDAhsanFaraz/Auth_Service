@@ -89,9 +89,17 @@ class UserService {
     }
   }
 
-  isAdmin(userId) {
+  async isAdmin(userId) {
     try {
-      return this.userRepository.isAdmin(userId);
+      return await this.userRepository.isAdmin(userId);
+    } catch (error) {
+      console.log("Something went wrong in service layer");
+      throw error;
+    }
+  }
+  async addRole(userId, roleId) {
+    try {
+      return await this.userRepository.addRole(userId, roleId);
     } catch (error) {
       console.log("Something went wrong in service layer");
       throw error;
