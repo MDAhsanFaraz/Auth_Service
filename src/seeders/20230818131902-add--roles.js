@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -11,24 +11,28 @@ module.exports = {
      *   name: 'John Doe',
      *   isBetaMember: false
      * }], {});
-    */
-    await queryInterface.bulkInsert('Roles', [
-      {
-        name:'ADMIN',
-        createdAt:new Date(),
-        updatedAt:new Date()
-      },
-      {
-        name:'CUSTOMER',
-        createdAt:new Date(),
-        updatedAt:new Date()        
-      },
-      {
-        name:'AIRLINE_BUISNESS',
-        createdAt:new Date(),
-        updatedAt:new Date()
-      }
-    ], {});
+     */
+    await queryInterface.bulkInsert(
+      "Roles",
+      [
+        {
+          name: "ADMIN",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: "CUSTOMER",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: "AIRLINE_BUISNESS",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+      ],
+      {}
+    );
   },
 
   async down(queryInterface, Sequelize) {
@@ -38,5 +42,5 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-  }
+  },
 };
